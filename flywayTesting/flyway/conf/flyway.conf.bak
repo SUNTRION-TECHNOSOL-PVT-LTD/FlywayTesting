@@ -1,0 +1,11 @@
+# Database URL panni poduthu
+flyway.url=jdbc:postgresql://localhost:5432/sts
+flyway.user=postgres
+flyway.password=suntrion@123
+
+# Schema settings
+flyway.schemas=public
+flyway.baselineOnMigrate=true
+
+# SQL file location (relative to this conf folder)
+flyway.locations=filesystem:../sql

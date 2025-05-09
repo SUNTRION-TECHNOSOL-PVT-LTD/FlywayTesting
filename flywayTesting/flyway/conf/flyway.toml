@@ -1,0 +1,35 @@
+databaseType = "PostgreSql"
+id = "eaf6d413-b849-4de9-af78-20a927b86642"
+name = "conf"
+
+[environments.development]
+displayName = "Development database"
+password = "suntrion@123"
+schemas = [ "public" ]
+url = "jdbc:postgresql://localhost:5432/sts"
+user = "postgres"
+
+[flyway]
+baselineOnMigrate = true
+environment = "development"
+locations = [ "filesystem:../sql" ]
+mixed = false
+outOfOrder = false
+schemaModelLocation = "schema-model"
+validateMigrationNaming = false
+
+[flyway.check]
+majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+shadowEnvironment = "shadow"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.behavior]
+detectRenames = "identical-only"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
