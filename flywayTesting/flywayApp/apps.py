@@ -23,7 +23,7 @@ class FlywayappConfig(AppConfig):
 
         # Locate the Flyway CLI executable on Windows or *nix
         flyway_exec = (
-            shutil.which("flyway")     # macOS/Linux
+            shutil.which("flyway")    
             or shutil.which("flyway.cmd")  # Windows
             or shutil.which("flyway.bat")
         )
@@ -44,7 +44,7 @@ class FlywayappConfig(AppConfig):
         try:
             # Run from the conf directory so that '../sql' → 'flyway/sql'
             subprocess.run(cmd, cwd=conf_dir, check=True)
-            print("✅ Flyway migrations applied")
+            print("✅ Flyway migrations applied")     
         except subprocess.CalledProcessError as e:
             print(f"❌ Flyway migrate failed:\n{e}", file=os.sys.stderr)
             raise
